@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="15dip"
+    android:paddingTop="10dip" >
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/header_content"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        backgroud="@color/auto_refresh_listview_text_color_selector"
+        android:gravity="center" >
+
+        <LinearLayout
+            android:id="@+id/refresh_prompt_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/pull_to_refresh_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/auto_refresh_listview_text_color_selector"
+                android:textSize="@dimen/refresh_text" />
+
+            <TextView
+                android:id="@+id/pull_to_refresh_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/auto_refresh_listview_text_color_selector"
+                android:textSize="@dimen/refresh_text" />
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/pull_to_refresh_progress"
+            style="@android:style/Widget.ProgressBar.Small.Inverse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/pull_to_refresh_text"
+            android:gravity="center"
+            android:indeterminate="true"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/pull_to_refresh_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/pull_to_refresh_text"
+            android:src="@drawable/ic_pulltorefresh_arrow"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</RelativeLayout>
