@@ -177,21 +177,6 @@ public class ViewFlow extends AdapterView<Adapter> {
 	}
 
 	@Override
-	protected void onLayout(boolean changed, int l, int t, int r, int b) {
-		int childLeft = 0;
-
-		final int count = getChildCount();
-		for (int i = 0; i < count; i++) {
-			final View child = getChildAt(i);
-			if (child.getVisibility() != View.GONE) {
-				final int childWidth = child.getMeasuredWidth();
-				child.layout(childLeft, 0, childLeft + childWidth, child.getMeasuredHeight());
-				childLeft += childWidth;
-			}
-		}
-	}
-
-	@Override
 	public boolean onInterceptTouchEvent(MotionEvent ev) {
 		if (getChildCount() == 0)
 			return false;
@@ -280,6 +265,21 @@ public class ViewFlow extends AdapterView<Adapter> {
 				mTouchState = TOUCH_STATE_REST;
 		}
 		return false;
+	}
+
+	@Override
+	protected void onLayout(boolean changed, int l, int t, int r, int b) {
+		int childLeft = 0;
+	
+		final int count = getChildCount();
+		for (int i = 0; i < count; i++) {
+			final View child = getChildAt(i);
+			if (child.getVisibility() != View.GONE) {
+				final int childWidth = child.getMeasuredWidth();
+				child.layout(childLeft, 0, childLeft + childWidth, child.getMeasuredHeight());
+				childLeft += childWidth;
+			}
+		}
 	}
 
 	@Override

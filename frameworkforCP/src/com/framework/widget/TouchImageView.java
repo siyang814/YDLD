@@ -218,12 +218,22 @@ public class TouchImageView extends ImageView implements OnTouchListener {
 		}
 		return true;
 	}
-
-	private float getScaleX() {
+	
+	@Override
+	public float getScaleX()
+	{
+		// TODO Auto-generated method stub
 		float[] p = new float[9];
 		getImageMatrix().getValues(p);
 		return p[Matrix.MSCALE_X];
 	}
+	
+//	@Override
+//	private float getScaleX() {
+//		float[] p = new float[9];
+//		getImageMatrix().getValues(p);
+//		return p[Matrix.MSCALE_X];
+//	}
 
 	private boolean isBitmapBoundOutOfImageViewBound() {
 		boolean isOut = false;

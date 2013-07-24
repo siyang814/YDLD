@@ -29,7 +29,7 @@ public class FrameworkforjxActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
          //this.doLogin("pppp@11.com", "123", "举贤猎才互动移动客户端android版", "1.2");
-        findView(); 
+//        findView(); 
         
         FileLoader.getInstance().load(uri, imageView, true);
        // getHunters();

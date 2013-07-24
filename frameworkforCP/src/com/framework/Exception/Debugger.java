@@ -2,9 +2,11 @@ package com.framework.Exception;
 
 import java.util.ArrayList;
 
+import com.framework.BuildConfig;
+
 public class Debugger {
 	
-	private static boolean debug = false;
+	private static boolean debug = true;
 
 	public static StackTraceElement[] getCallerStack()
 	{
@@ -35,7 +37,7 @@ public class Debugger {
 	
 	public static void Assert(boolean bCondition, String msg)
 	{
-		if (debug) {
+		if (BuildConfig.DEBUG) {
 			if (bCondition)
 				return ;
 			DebuggerError e = new DebuggerError(msg);
